@@ -7,7 +7,6 @@ option_resize_1='300x'
 option_resize_2='x100'
 option_resize_3='150x'
 
-
 #
 #
 #
@@ -21,13 +20,13 @@ magick -size 640x360 xc:"#808080" -fill "#000000" -gravity Center -pointsize 256
 magick -size 640x360 xc:"#808080" -fill "#000000" -gravity Center -pointsize 256 -annotate +0+0 "5" ./sample5.png
 magick -size 640x360 xc:"#808080" -fill "#000000" -gravity Center -pointsize 256 -annotate +0+0 "6" ./sample6.png
 
-
 #
 # landscape
 #
 #  +---+---+...+---+
 #  |  1|  2|   |  n|
 #  +---+---+...+---+
+#
 
 python3 ./create_tiles.py \
   ./sample1.png \
@@ -41,7 +40,6 @@ python3 ./create_tiles.py \
 magick ./tiles_landscape..tmp.png -resize $option_resize_2 ./tiles_landscape.png
 rm ./tiles_landscape..tmp.png
 
-
 #
 # portrait
 #
@@ -54,6 +52,7 @@ rm ./tiles_landscape..tmp.png
 #  +---+
 #  |  n|
 #  +---+
+#
 
 python3 ./create_tiles.py \
   ./sample1.png \
@@ -67,7 +66,6 @@ python3 ./create_tiles.py \
 magick ./tiles_portrait..tmp.png -resize $option_resize_3 ./tiles_portrait.png
 rm ./tiles_portrait..tmp.png
 
-
 #
 # 4 image files
 #
@@ -76,6 +74,7 @@ rm ./tiles_portrait..tmp.png
 #  +---+---+
 #  |  3|  2|
 #  +---+---+
+#
 
 python3 ./create_tiles.py \
   ./sample1.png \
@@ -89,7 +88,6 @@ python3 ./create_tiles.py \
 
 magick ./tiles4..tmp.png -resize $option_resize_1 ./tiles4.png
 rm ./tiles4..tmp.png
-
 
 #
 # 5 image files
@@ -121,7 +119,6 @@ python3 ./create_tiles.py \
 magick ./tiles5_NW..tmp.png -resize $option_resize_1 ./tiles5_NW.png
 rm ./tiles5_NW..tmp.png
 
-
 python3 ./create_tiles.py \
   ./sample1.png \
   ./sample2.png \
@@ -136,7 +133,6 @@ python3 ./create_tiles.py \
 
 magick ./tiles5_NE..tmp.png -resize $option_resize_1 ./tiles5_NE.png
 rm ./tiles5_NE..tmp.png
-
 
 python3 ./create_tiles.py \
   ./sample1.png \
@@ -153,7 +149,6 @@ python3 ./create_tiles.py \
 magick ./tiles5_SE..tmp.png -resize $option_resize_1 ./tiles5_SE.png
 rm ./tiles5_SE..tmp.png
 
-
 python3 ./create_tiles.py \
   ./sample1.png \
   ./sample2.png \
@@ -168,7 +163,6 @@ python3 ./create_tiles.py \
 
 magick ./tiles5_SW..tmp.png -resize $option_resize_1 ./tiles5_SW.png
 rm ./tiles5_SW..tmp.png
-
 
 #
 # 6 image files
@@ -199,7 +193,6 @@ python3 ./create_tiles.py \
 magick ./tiles6_NW..tmp.png -resize $option_resize_1 ./tiles6_NW.png
 rm ./tiles6_NW..tmp.png
 
-
 python3 ./create_tiles.py \
   ./sample1.png \
   ./sample2.png \
@@ -215,7 +208,6 @@ python3 ./create_tiles.py \
 
 magick ./tiles6_NE..tmp.png -resize $option_resize_1 ./tiles6_NE.png
 rm ./tiles6_NE..tmp.png
-
 
 python3 ./create_tiles.py \
   ./sample1.png \
@@ -233,7 +225,6 @@ python3 ./create_tiles.py \
 magick ./tiles6_SE..tmp.png -resize $option_resize_1 ./tiles6_SE.png
 rm ./tiles6_SE..tmp.png
 
-
 python3 ./create_tiles.py \
   ./sample1.png \
   ./sample2.png \
@@ -250,7 +241,6 @@ python3 ./create_tiles.py \
 magick ./tiles6_SW..tmp.png -resize $option_resize_1 ./tiles6_SW.png
 rm ./tiles6_SW..tmp.png
 
-
 #
 #
 #
@@ -263,6 +253,5 @@ rm ./sample3.png
 rm ./sample4.png
 rm ./sample5.png
 rm ./sample6.png
-
 
 ##
