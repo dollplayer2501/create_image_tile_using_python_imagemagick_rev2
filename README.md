@@ -12,7 +12,7 @@ It uses ImageMagick ver.7 syntax.
 ## Usage:
 
 I think it would be better to create a batch file and run it rather than specifying the files one by one from the console and executing them in real time.  
-Check `create_tiles.sh`.
+Check [`create_tiles.sh`](./create_tiles.sh).
 
 |Arguments|Default|Remarks|
 |---|---|---|
@@ -41,7 +41,7 @@ python3 ./create_tiles.py \
   ./tiles6_NW.png \
   --tyling_type 6tiles \
   --gap_size 20 \
-  --gap_color '#72170faa'
+  --gap_color '#72170faa' \
   --direction NW
 ```
 
@@ -62,7 +62,7 @@ python3 ./create_tiles.py \
   ./tiles5_NW.png \
   --tyling_type 5tiles \
   --gap_size 20 \
-  --gap_color '#72170faa'
+  --gap_color '#72170faa' \
   --direction NW
 ```
 
