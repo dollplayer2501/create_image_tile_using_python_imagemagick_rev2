@@ -2,9 +2,9 @@ Using Python and ImageMagick, image files are arranged in tiles according to cer
 
 ## Prerequisite:
 
-- All images must be the same size  
+- **With some exceptions, the image files must have the same vertical and horizontal dimensions.**  
 The image size is checked in the script.
-- Install ImageMagick beforehand  
+- **Install ImageMagick beforehand.**  
 I am not using Python's ImageMagick library, but am using `subprocess.run(['magick', ...], ...)`.  
 It uses ImageMagick ver.7 syntax.
 
@@ -25,6 +25,8 @@ Check [`create_tiles.sh`](./create_tiles.sh).
 
 
 ### 6 tiles
+
+All images must be the same size in both width and height.
 
 |`NW`|`NE`|`SE`|`SW`|
 |--|--|--|--|
@@ -48,6 +50,8 @@ python3 ./create_tiles.py \
 
 ### 5 tiles
 
+All images must be the same size in both width and height.
+
 |`NW`|`NE`|`SE`|`SW`|
 |--|--|--|--|
 |<img src="./tiles5_NW.png" width="150">|<img src="./tiles5_NE.png" width="150">|<img src="./tiles5_SE.png" width="150">|<img src="./tiles5_SW.png" width="150">|
@@ -69,6 +73,8 @@ python3 ./create_tiles.py \
 
 ### 4 tiles
 
+All images must be the same size in both width and height.
+
 <img src="./tiles4.png" width="150">
 
 ```
@@ -86,6 +92,8 @@ python3 ./create_tiles.py \
 
 ### Landscape
 
+All images must be the same height.
+
 <img src="./tiles_landscape.png" height="60">
 
 ```
@@ -101,6 +109,8 @@ python3 ./create_tiles.py \
 
 
 ### Portrait
+
+All images must be the same width.
 
 <img src="./tiles_portrait.png" width="100">
 
