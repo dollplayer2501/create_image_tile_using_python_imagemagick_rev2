@@ -9,7 +9,8 @@ import os
 import sys
 import argparse
 import glob
-import pprint
+import tempfile
+import shutil
 
 
 from _functions.common_function import (
@@ -96,7 +97,7 @@ if __name__ == "__main__":
           tmp_flg = False
 
       if True == tmp_flg:
-        print(message_yellow('Image files\' size are no probrem'))
+        print(message_yellow('Image files\' size are no probrem: ' + os.path.basename(in_file)))
       else:
         print(message_red(
           '%s: %sx%s, %sx%s' % (
@@ -110,29 +111,30 @@ if __name__ == "__main__":
   #
   #
 
+  temp_dir = tempfile.mkdtemp(prefix = 'create_tiles_')
+
   if '6tiles' == args.tyling_type:
-    create_tiles6(args, dic_size)
+    create_tiles6(args, temp_dir, dic_size)
 
   elif '5tiles' == args.tyling_type:
-    create_tiles5(args, dic_size)
+    create_tiles5(args, temp_dir, dic_size)
 
   elif '4tiles' == args.tyling_type:
-    create_tiles4(args, dic_size)
+    create_tiles4(args, temp_dir, dic_size)
 
   elif 'landscape' == args.tyling_type or 'portrait' == args.tyling_type:
-    create_landscape_or_portrait(args, dic_size)
+    create_landscape_or_portrait(args, temp_dir, dic_size)
 
 
   #
   #
   #
 
-  def _exec_delete(_files):
-    for filename in glob.glob(_files):
-      os.remove(filename)
+  shutil.rmtree(temp_dir)
 
-  _exec_delete('*.mpc')
-  _exec_delete('*.cache')
 
+  #
+  #
+  #
 
   sys.exit()

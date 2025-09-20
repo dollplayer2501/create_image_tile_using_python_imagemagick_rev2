@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 
-import sys
+import os
 
 from _functions.common_function import (
   subprocess_check_output,
@@ -26,7 +26,7 @@ from _functions.common_function import (
 #
 
 
-def create_tiles6(_args:list, _size:list):
+def create_tiles6(_args:list, temp_dir:str, _size:list):
 
   #
   # 5 files are 1/2, Strictly speaking, it's different.
@@ -50,7 +50,7 @@ def create_tiles6(_args:list, _size:list):
     ret = subprocess_run([ 'magick',
         _args.input_files[idx - 1],
         '-resize', resize_parts,
-        'parts_' + str(idx) + '.mpc',
+        os.path.join(temp_dir, 'parts_' + str(idx) + '.mpc'),
       ])
 
 
@@ -69,34 +69,34 @@ def create_tiles6(_args:list, _size:list):
 
   tmp_parts_1 = tmp_parts_2 = tmp_parts_3 = None
   if 'NW' == _args.direction:
-    tmp_parts_1 = 'parts_1.mpc'
-    tmp_parts_2 = 'parts_2.mpc'
-    tmp_parts_3 = 'parts_3.mpc'
+    tmp_parts_1 = os.path.join(temp_dir, 'parts_1.mpc')
+    tmp_parts_2 = os.path.join(temp_dir, 'parts_2.mpc')
+    tmp_parts_3 = os.path.join(temp_dir, 'parts_3.mpc')
   elif 'NE' == _args.direction:
-    tmp_parts_1 = 'parts_6.mpc'
-    tmp_parts_2 = 'parts_5.mpc'
-    tmp_parts_3 = 'parts_4.mpc'
+    tmp_parts_1 = os.path.join(temp_dir, 'parts_6.mpc')
+    tmp_parts_2 = os.path.join(temp_dir, 'parts_5.mpc')
+    tmp_parts_3 = os.path.join(temp_dir, 'parts_4.mpc')
   elif 'SE' == _args.direction:
-    tmp_parts_1 = 'parts_5.mpc'
-    tmp_parts_2 = 'parts_4.mpc'
-    tmp_parts_3 = 'parts_3.mpc'
+    tmp_parts_1 = os.path.join(temp_dir, 'parts_5.mpc')
+    tmp_parts_2 = os.path.join(temp_dir, 'parts_4.mpc')
+    tmp_parts_3 = os.path.join(temp_dir, 'parts_3.mpc')
   elif 'SW' == _args.direction:
-    tmp_parts_1 = 'parts_1.mpc'
-    tmp_parts_2 = 'parts_2.mpc'
-    tmp_parts_3 = 'parts_3.mpc'
+    tmp_parts_1 = os.path.join(temp_dir, 'parts_1.mpc')
+    tmp_parts_2 = os.path.join(temp_dir, 'parts_2.mpc')
+    tmp_parts_3 = os.path.join(temp_dir, 'parts_3.mpc')
 
   size_parts = '%sx%s' % (int(resize_parts_width), int(_args.gap_size))
   ret = subprocess_run([
-      'magick', '-size', size_parts, 'xc:' + _args.gap_color, 'base_parts_1.mpc'
+      'magick', '-size', size_parts, 'xc:' + _args.gap_color, os.path.join(temp_dir, 'base_parts_1.mpc')
     ])
   ret = subprocess_run([ 'magick',
       tmp_parts_1,
-      'base_parts_1.mpc',
+      os.path.join(temp_dir, 'base_parts_1.mpc'),
       tmp_parts_2,
-      'base_parts_1.mpc',
+      os.path.join(temp_dir, 'base_parts_1.mpc'),
       tmp_parts_3,
       '-append',
-      'parts_11.mpc',
+      os.path.join(temp_dir, 'parts_11.mpc'),
     ])
 
 
@@ -111,28 +111,28 @@ def create_tiles6(_args:list, _size:list):
 
   tmp_parts_5 = tmp_parts_4 = None
   if 'NW' == _args.direction:
-    tmp_parts_5 = 'parts_5.mpc'
-    tmp_parts_4 = 'parts_4.mpc'
+    tmp_parts_5 = os.path.join(temp_dir, 'parts_5.mpc')
+    tmp_parts_4 = os.path.join(temp_dir, 'parts_4.mpc')
   elif 'NE' == _args.direction:
-    tmp_parts_5 = 'parts_3.mpc'
-    tmp_parts_4 = 'parts_2.mpc'
+    tmp_parts_5 = os.path.join(temp_dir, 'parts_3.mpc')
+    tmp_parts_4 = os.path.join(temp_dir, 'parts_2.mpc')
   elif 'SE' == _args.direction:
-    tmp_parts_5 = 'parts_6.mpc'
-    tmp_parts_4 = 'parts_1.mpc'
+    tmp_parts_5 = os.path.join(temp_dir, 'parts_6.mpc')
+    tmp_parts_4 = os.path.join(temp_dir, 'parts_1.mpc')
   elif 'SW' == _args.direction:
-    tmp_parts_5 = 'parts_5.mpc'
-    tmp_parts_4 = 'parts_6.mpc'
+    tmp_parts_5 = os.path.join(temp_dir, 'parts_5.mpc')
+    tmp_parts_4 = os.path.join(temp_dir, 'parts_6.mpc')
 
   size_parts = '%sx%s' % (int(_args.gap_size), int(resize_parts_height))
   ret = subprocess_run([
-      'magick', '-size', size_parts, 'xc:' + _args.gap_color, 'base_parts_2.mpc'
+      'magick', '-size', size_parts, 'xc:' + _args.gap_color, os.path.join(temp_dir, 'base_parts_2.mpc')
     ])
   ret = subprocess_run([ 'magick',
       tmp_parts_5,
-      'base_parts_2.mpc',
+      os.path.join(temp_dir, 'base_parts_2.mpc'),
       tmp_parts_4,
       '+append',
-      'parts_21.mpc',
+      os.path.join(temp_dir, 'parts_21.mpc'),
     ])
 
 
@@ -152,27 +152,27 @@ def create_tiles6(_args:list, _size:list):
   tmp_parts_6 = tmp_parts_7 = None
   if 'NW' == _args.direction:
     tmp_parts_6 = _args.input_files[5]
-    tmp_parts_7 = 'parts_21.mpc'
+    tmp_parts_7 = os.path.join(temp_dir, 'parts_21.mpc')
   elif 'NE' == _args.direction:
     tmp_parts_6 = _args.input_files[0]
-    tmp_parts_7 = 'parts_21.mpc'
+    tmp_parts_7 = os.path.join(temp_dir, 'parts_21.mpc')
   elif 'SE' == _args.direction:
-    tmp_parts_6 = 'parts_21.mpc'
+    tmp_parts_6 = os.path.join(temp_dir, 'parts_21.mpc')
     tmp_parts_7 = _args.input_files[1]
   elif 'SW' == _args.direction:
-    tmp_parts_6 = 'parts_21.mpc'
+    tmp_parts_6 = os.path.join(temp_dir, 'parts_21.mpc')
     tmp_parts_7 = _args.input_files[3]
 
   size_parts = '%sx%s' % (int(_size['width']), int(_args.gap_size))
   ret = subprocess_run([
-      'magick', '-size', size_parts, 'xc:' + _args.gap_color, 'base_parts_3.mpc'
+      'magick', '-size', size_parts, 'xc:' + _args.gap_color, os.path.join(temp_dir, 'base_parts_3.mpc')
     ])
   ret = subprocess_run([ 'magick',
       tmp_parts_6,
-      'base_parts_3.mpc',
+      os.path.join(temp_dir, 'base_parts_3.mpc'),
       tmp_parts_7,
       '-append',
-      'parts_31.mpc',
+      os.path.join(temp_dir, 'parts_31.mpc'),
     ])
 
 
@@ -182,26 +182,26 @@ def create_tiles6(_args:list, _size:list):
 
   size_parts = '%sx%s' % (int(_args.gap_size), (int(resize_parts_height) * 3) + (int(_args.gap_size) * 2))
   ret = subprocess_run([
-      'magick', '-size', size_parts, 'xc:' + _args.gap_color, 'base_parts_4.mpc'
+      'magick', '-size', size_parts, 'xc:' + _args.gap_color, os.path.join(temp_dir, 'base_parts_4.mpc')
     ])
 
   tmp_parts_8 = tmp_parts_9 = None
   if 'NW' == _args.direction:
-    tmp_parts_8 = 'parts_31.mpc'
-    tmp_parts_9 = 'parts_11.mpc'
+    tmp_parts_8 = os.path.join(temp_dir, 'parts_31.mpc')
+    tmp_parts_9 = os.path.join(temp_dir, 'parts_11.mpc')
   elif 'NE' == _args.direction:
-    tmp_parts_8 = 'parts_11.mpc'
-    tmp_parts_9 = 'parts_31.mpc'
+    tmp_parts_8 = os.path.join(temp_dir, 'parts_11.mpc')
+    tmp_parts_9 = os.path.join(temp_dir, 'parts_31.mpc')
   elif 'SE' == _args.direction:
-    tmp_parts_8 = 'parts_11.mpc'
-    tmp_parts_9 = 'parts_31.mpc'
+    tmp_parts_8 = os.path.join(temp_dir, 'parts_11.mpc')
+    tmp_parts_9 = os.path.join(temp_dir, 'parts_31.mpc')
   elif 'SW' == _args.direction:
-    tmp_parts_8 = 'parts_31.mpc'
-    tmp_parts_9 = 'parts_11.mpc'
+    tmp_parts_8 = os.path.join(temp_dir, 'parts_31.mpc')
+    tmp_parts_9 = os.path.join(temp_dir, 'parts_11.mpc')
 
   ret = subprocess_run([ 'magick',
       tmp_parts_8,
-      'base_parts_4.mpc',
+      os.path.join(temp_dir, 'base_parts_4.mpc'),
       tmp_parts_9,
       '+append',
       _args.output_file
