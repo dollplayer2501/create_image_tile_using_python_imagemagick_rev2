@@ -48,7 +48,7 @@ def create_tiles6(_args:list, temp_dir:str, _size:list):
 
   for idx in tmp_dic:
     ret = subprocess_run([ 'magick',
-        _args.input_files[idx - 1],
+        _args.input[idx - 1],
         '-resize', resize_parts,
         os.path.join(temp_dir, 'parts_' + str(idx) + '.mpc'),
       ])
@@ -151,17 +151,17 @@ def create_tiles6(_args:list, temp_dir:str, _size:list):
 
   tmp_parts_6 = tmp_parts_7 = None
   if 'NW' == _args.direction:
-    tmp_parts_6 = _args.input_files[5]
+    tmp_parts_6 = _args.input[5]
     tmp_parts_7 = os.path.join(temp_dir, 'parts_21.mpc')
   elif 'NE' == _args.direction:
-    tmp_parts_6 = _args.input_files[0]
+    tmp_parts_6 = _args.input[0]
     tmp_parts_7 = os.path.join(temp_dir, 'parts_21.mpc')
   elif 'SE' == _args.direction:
     tmp_parts_6 = os.path.join(temp_dir, 'parts_21.mpc')
-    tmp_parts_7 = _args.input_files[1]
+    tmp_parts_7 = _args.input[1]
   elif 'SW' == _args.direction:
     tmp_parts_6 = os.path.join(temp_dir, 'parts_21.mpc')
-    tmp_parts_7 = _args.input_files[3]
+    tmp_parts_7 = _args.input[3]
 
   size_parts = '%sx%s' % (int(_size['width']), int(_args.gap_size))
   ret = subprocess_run([
@@ -204,7 +204,7 @@ def create_tiles6(_args:list, temp_dir:str, _size:list):
       os.path.join(temp_dir, 'base_parts_4.mpc'),
       tmp_parts_9,
       '+append',
-      _args.output_file
+      _args.output
     ])
 
 

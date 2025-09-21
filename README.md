@@ -14,14 +14,14 @@ It uses ImageMagick ver.7 syntax.
 I think it would be better to create a batch file and run it rather than specifying the files one by one from the console and executing them in real time.  
 Check [`create_tiles.sh`](./create_tiles.sh).
 
-|Arguments|Default|Remarks|
-|---|---|---|
-|Input image files||The order has meaning, files are not checked for existence|
-|Output image file||The end of the *input image files name* without an argument name will be the output file name|
-|`-tt`, `--tyling_type`||`6tiles`, `5tiles`, `4tiles`, `landscape`, `portrait`|
-|`-gs`, `--gap_size`|`10`||
-|`-gc`, `--gap_color`|`#00000000`||
-|`-di`, `--direction`|`NE`|(option) Direction, `NW`(default), `NE`, `SE`, `SW`, valid only when the `--tyling_type` value is `5tiles` or `6tiles`, ignored otherwise|
+|Argument|Required|Default|Description|
+|---|---|---|---|
+|`-i`, `--input`|Required||The order has meaning, files are not checked for existence|
+|`-o`, `--output`|Required|||
+|`-tt`, `--tyling_type`|Required||`6tiles`, `5tiles`, `4tiles`, `landscape`, `portrait`|
+|`-gs`, `--gap_size`|Optional|`10`||
+|`-gc`, `--gap_color`|Optional|`#00000000`||
+|`-di`, `--direction`|Optional|`NE`|Direction, `NW`(default), `NE`, `SE`, `SW`, valid only when the `--tyling_type` value is `5tiles` or `6tiles`, ignored otherwise|
 
 
 ### 6 tiles
@@ -34,13 +34,14 @@ All images must be the same size in both width and height.
 
 ```
 python3 ./create_tiles.py \
-  ./sample1.png \
-  ./sample2.png \
-  ./sample3.png \
-  ./sample4.png \
-  ./sample5.png \
-  ./sample6.png \
-  ./tiles6_NW.png \
+  --input \
+    ./sample1.png \
+    ./sample2.png \
+    ./sample3.png \
+    ./sample4.png \
+    ./sample5.png \
+    ./sample6.png \
+  --output ./tiles6_NW.png \
   --tyling_type 6tiles \
   --gap_size 20 \
   --gap_color '#72170faa' \
@@ -58,12 +59,13 @@ All images must be the same size in both width and height.
 
 ```
 python3 ./create_tiles.py \
-  ./sample1.png \
-  ./sample2.png \
-  ./sample3.png \
-  ./sample4.png \
-  ./sample5.png \
-  ./tiles5_NW.png \
+  --input \
+    ./sample1.png \
+    ./sample2.png \
+    ./sample3.png \
+    ./sample4.png \
+    ./sample5.png \
+  --output ./tiles5_NW.png \
   --tyling_type 5tiles \
   --gap_size 20 \
   --gap_color '#72170faa' \
@@ -79,11 +81,12 @@ All images must be the same size in both width and height.
 
 ```
 python3 ./create_tiles.py \
-  ./sample1.png \
-  ./sample2.png \
-  ./sample3.png \
-  ./sample4.png \
-  ./tiles4..tmp.png \
+  --input \
+    ./sample1.png \
+    ./sample2.png \
+    ./sample3.png \
+    ./sample4.png \
+  --output ./tiles4.png \
   --tyling_type 4tiles \
   --gap_size 20 \
   --gap_color '#72170faa'
@@ -98,10 +101,11 @@ All images must be the same height.
 
 ```
 python3 ./create_tiles.py \
-  ./sample1.png \
-  ./sample2w.png \
-  ./sample3.png \
-  ./tiles_landscape.png \
+  --input \
+    ./sample1.png \
+    ./sample2w.png \
+    ./sample3.png \
+  --output ./tiles_landscape.png \
   --tyling_type landscape \
   --gap_size 20 \
   --gap_color '#72170faa'
@@ -116,10 +120,11 @@ All images must be the same width.
 
 ```
 python3 ./create_tiles.py \
-  ./sample1.png \
-  ./sample2w.png \
-  ./sample3.png \
-  ./tiles_portrait.png \
+  --input \
+    ./sample1.png \
+    ./sample2h.png \
+    ./sample3.png \
+  --output ./tiles_portrait.png \
   --tyling_type portrait \
   --gap_size 20 \
   --gap_color '#72170faa'

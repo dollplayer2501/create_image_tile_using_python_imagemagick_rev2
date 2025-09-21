@@ -30,16 +30,16 @@ def create_tiles4(_args:list, temp_dir:str, _size:list):
       'magick', '-size', size_parts, 'xc:' + _args.gap_color, os.path.join(temp_dir, 'base_parts_1.mpc')
     ])
   ret = subprocess_run([ 'magick',
-      _args.input_files[0],
+      _args.input[0],
       os.path.join(temp_dir, 'base_parts_1.mpc'),
-      _args.input_files[1],
+      _args.input[1],
       '-append',
       os.path.join(temp_dir, 'parts_1.mpc'),
     ])
   ret = subprocess_run([ 'magick',
-      _args.input_files[3],
+      _args.input[3],
       os.path.join(temp_dir, 'base_parts_1.mpc'),
-      _args.input_files[2],
+      _args.input[2],
       '-append',
       os.path.join(temp_dir, 'parts_2.mpc'),
     ])
@@ -54,7 +54,7 @@ def create_tiles4(_args:list, temp_dir:str, _size:list):
       os.path.join(temp_dir, 'base_parts_2.mpc'),
       os.path.join(temp_dir, 'parts_1.mpc'),
       '+append',
-      _args.output_file
+      _args.output
     ])
 
 

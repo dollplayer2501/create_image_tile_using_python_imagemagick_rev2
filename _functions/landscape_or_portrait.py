@@ -49,7 +49,7 @@ def create_landscape_or_portrait(_args:list, temp_dir:str, _size:list):
   exec_args = [
       'magick',
     ]
-  for in_file in _args.input_files:
+  for in_file in _args.input:
     exec_args.append(in_file)
     exec_args.append(os.path.join(temp_dir, 'base_parts.mpc'))
   exec_args.pop(-1)
@@ -59,7 +59,7 @@ def create_landscape_or_portrait(_args:list, temp_dir:str, _size:list):
   else:
     exec_args.append('-append')
 
-  exec_args.append(_args.output_file)
+  exec_args.append(_args.output)
   ret = subprocess_run(exec_args)
 
 

@@ -47,17 +47,17 @@ def create_tiles5(_args:list, temp_dir:str, _size:list):
 
   tmp_parts_3 = tmp_parts_4 = None
   if 'NW' == _args.direction:
-    tmp_parts_4 = _args.input_files[3]
-    tmp_parts_3 = _args.input_files[2]
+    tmp_parts_4 = _args.input[3]
+    tmp_parts_3 = _args.input[2]
   elif 'NE' == _args.direction:
-    tmp_parts_4 = _args.input_files[2]
-    tmp_parts_3 = _args.input_files[1]
+    tmp_parts_4 = _args.input[2]
+    tmp_parts_3 = _args.input[1]
   elif 'SE' == _args.direction:
-    tmp_parts_4 = _args.input_files[4]
-    tmp_parts_3 = _args.input_files[0]
+    tmp_parts_4 = _args.input[4]
+    tmp_parts_3 = _args.input[0]
   elif 'SW' == _args.direction:
-    tmp_parts_4 = _args.input_files[3]
-    tmp_parts_3 = _args.input_files[4]
+    tmp_parts_4 = _args.input[3]
+    tmp_parts_3 = _args.input[4]
 
   resize_parts = '%sx%s' % ((int(_size['width']) - int(_args.gap_size)) / 2, '')
   ret = subprocess_run([ 'magick',
@@ -110,17 +110,17 @@ def create_tiles5(_args:list, temp_dir:str, _size:list):
 
   tmp_parts_5_1 = tmp_parts_5_2 = None
   if 'NW' == _args.direction:
-    tmp_parts_5_1 = _args.input_files[4]
+    tmp_parts_5_1 = _args.input[4]
     tmp_parts_5_2 = os.path.join(temp_dir, 'parts_21.mpc')
   elif 'NE' == _args.direction:
-    tmp_parts_5_1 = _args.input_files[0]
+    tmp_parts_5_1 = _args.input[0]
     tmp_parts_5_2 = os.path.join(temp_dir, 'parts_21.mpc')
   elif 'SE' == _args.direction:
     tmp_parts_5_1 = os.path.join(temp_dir, 'parts_21.mpc')
-    tmp_parts_5_2 = _args.input_files[1]
+    tmp_parts_5_2 = _args.input[1]
   elif 'SW' == _args.direction:
     tmp_parts_5_1 = os.path.join(temp_dir, 'parts_21.mpc')
-    tmp_parts_5_2 = _args.input_files[2]
+    tmp_parts_5_2 = _args.input[2]
 
   size_parts = '%sx%s' % (int(_size['width']), int(parts_31_gap_height))
   ret = subprocess_run([
@@ -153,17 +153,17 @@ def create_tiles5(_args:list, temp_dir:str, _size:list):
 
   tmp_parts_1 = tmp_parts_2 = None
   if 'NW' == _args.direction:
-    tmp_parts_1 = _args.input_files[0]
-    tmp_parts_2 = _args.input_files[1]
+    tmp_parts_1 = _args.input[0]
+    tmp_parts_2 = _args.input[1]
   elif 'NE' == _args.direction:
-    tmp_parts_1 = _args.input_files[4]
-    tmp_parts_2 = _args.input_files[3]
+    tmp_parts_1 = _args.input[4]
+    tmp_parts_2 = _args.input[3]
   elif 'SE' == _args.direction:
-    tmp_parts_1 = _args.input_files[3]
-    tmp_parts_2 = _args.input_files[2]
+    tmp_parts_1 = _args.input[3]
+    tmp_parts_2 = _args.input[2]
   elif 'SW' == _args.direction:
-    tmp_parts_1 = _args.input_files[0]
-    tmp_parts_2 = _args.input_files[1]
+    tmp_parts_1 = _args.input[0]
+    tmp_parts_2 = _args.input[1]
 
   resize_parts = '%sx%s' % (int(_size['width']) / 4 * 3, int(_size['width']) / 4 * 3)
   ret = subprocess_run([ 'magick',
@@ -220,7 +220,7 @@ def create_tiles5(_args:list, temp_dir:str, _size:list):
       os.path.join(temp_dir, 'base_parts_4.mpc'),
       tmp_parts_11,
       '+append',
-      _args.output_file
+      _args.output
     ])
 
 
