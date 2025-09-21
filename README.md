@@ -19,7 +19,7 @@ Check [`create_tiles.sh`](./create_tiles.sh).
 |`-i`, `--input`|Required||The order has meaning, files are not checked for existence|
 |`-o`, `--output`|Required|||
 |`-tt`, `--tyling_type`|Required||`6tiles`, `5tiles`, `4tiles`, `landscape`, `portrait`|
-|`-gs`, `--gap_size`|Optional|`10`||
+|`-gs`, `--gap_size`|Optional|`10`|**Odd numbers are not accepted** as this complicates internal processing.|
 |`-gc`, `--gap_color`|Optional|`#00000000`||
 |`-di`, `--direction`|Optional|`NE`|Direction, `NW`(default), `NE`, `SE`, `SW`, valid only when the `--tyling_type` value is `5tiles` or `6tiles`, ignored otherwise|
 

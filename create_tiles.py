@@ -37,11 +37,6 @@ if __name__ == "__main__":
     formatter_class = argparse.RawDescriptionHelpFormatter,
     description = message_yellow('Arrange image files in tiles.'))
 
-  # parser.add_argument('input_files',
-  #   nargs = '+',
-  #   metavar = 'Input files',
-  #   help = message_yellow('Input image files'))
-
   parser.add_argument('-i', '--input',
     nargs = '+',
     metavar = 'Input files, 2 to 6',
@@ -49,16 +44,11 @@ if __name__ == "__main__":
     type = str,
     help = message_yellow('Input image files'))
 
-  # parser.add_argument('output_file',
-  #   metavar = 'Output file',
-  #   help = message_yellow('Output image file'))
-
   parser.add_argument('-o', '--output',
     metavar = 'Output file',
     required = True,
     type = str,
-    help = message_yellow('Output image file')
-  )
+    help = message_yellow('Output image file'))
 
   parser.add_argument('-tt', '--tyling_type',
     choices = [ 'landscape', 'portrait', '4tiles', '5tiles', '6tiles', ],
@@ -137,6 +127,14 @@ if __name__ == "__main__":
 
   if False == tmp_flg:
     parser.error(message_red('Not all images are the same size, width and height'))
+
+
+  #
+  #
+  #
+
+  if 1 == args.gap_size % 2:
+    parser.error(message_red('`gap_size` does not accept odd numbers, I\'m so sorry.'))
 
 
   #
