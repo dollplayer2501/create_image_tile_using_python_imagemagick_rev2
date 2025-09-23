@@ -30,7 +30,7 @@ All images must be the same size in both width and height.
 
 |`NW`|`NE`|`SE`|`SW`|
 |--|--|--|--|
-|<img src="./tiles6_NW.png" width="150">|<img src="./tiles6_NE.png" width="150">|<img src="./tiles6_SE.png" width="150">|<img src="./tiles6_SW.png" width="150">|
+|<img src="./samples/tiles6_NW.png" width="150">|<img src="./samples/tiles6_NE.png" width="150">|<img src="./samples/tiles6_SE.png" width="150">|<img src="./samples/tiles6_SW.png" width="150">|
 
 ```
 python3 ./create_tiles.py \
@@ -55,7 +55,7 @@ All images must be the same size in both width and height.
 
 |`NW`|`NE`|`SE`|`SW`|
 |--|--|--|--|
-|<img src="./tiles5_NW.png" width="150">|<img src="./tiles5_NE.png" width="150">|<img src="./tiles5_SE.png" width="150">|<img src="./tiles5_SW.png" width="150">|
+|<img src="./samples/tiles5_NW.png" width="150">|<img src="./samples/tiles5_NE.png" width="150">|<img src="./samples/tiles5_SE.png" width="150">|<img src="./samples/tiles5_SW.png" width="150">|
 
 ```
 python3 ./create_tiles.py \
@@ -77,7 +77,7 @@ python3 ./create_tiles.py \
 
 All images must be the same size in both width and height.
 
-<img src="./tiles4.png" width="150">
+<img src="./samples/tiles4.png" width="150">
 
 ```
 python3 ./create_tiles.py \
@@ -97,7 +97,7 @@ python3 ./create_tiles.py \
 
 All images must be the same height.
 
-<img src="./tiles_landscape.png" height="60">
+<img src="./samples/tiles_landscape.png" height="60">
 
 ```
 python3 ./create_tiles.py \
@@ -116,7 +116,7 @@ python3 ./create_tiles.py \
 
 All images must be the same width.
 
-<img src="./tiles_portrait.png" width="100">
+<img src="./samples/tiles_portrait.png" width="100">
 
 ```
 python3 ./create_tiles.py \

@@ -47,7 +47,7 @@ python3 ./create_tiles.py \
   --gap_size $option_gap_size \
   --gap_color $option_gap_color
 
-magick ${tmpdir}/tiles_landscape..tmp.png -resize $option_resize_2 ./tiles_landscape.png
+magick ${tmpdir}/tiles_landscape..tmp.png -resize $option_resize_2 ./samples/tiles_landscape.png
 
 
 #
@@ -74,7 +74,7 @@ python3 ./create_tiles.py \
   --gap_size $option_gap_size \
   --gap_color $option_gap_color
 
-magick ${tmpdir}/tiles_portrait..tmp.png -resize $option_resize_3 ./tiles_portrait.png
+magick ${tmpdir}/tiles_portrait..tmp.png -resize $option_resize_3 ./samples/tiles_portrait.png
 
 
 #
@@ -98,7 +98,7 @@ python3 ./create_tiles.py \
   --gap_size $option_gap_size \
   --gap_color $option_gap_color
 
-magick ${tmpdir}/tiles4..tmp.png -resize $option_resize_1 ./tiles4.png
+magick ${tmpdir}/tiles4..tmp.png -resize $option_resize_1 ./samples/tiles4.png
 
 
 #
@@ -129,7 +129,7 @@ python3 ./create_tiles.py \
   --gap_color $option_gap_color \
   --direction NW
 
-magick ${tmpdir}/tiles5_NW..tmp.png -resize $option_resize_1 ./tiles5_NW.png
+magick ${tmpdir}/tiles5_NW..tmp.png -resize $option_resize_1 ./samples/tiles5_NW.png
 
 python3 ./create_tiles.py \
   --input \
@@ -144,7 +144,7 @@ python3 ./create_tiles.py \
   --gap_color $option_gap_color \
   --direction NE
 
-magick ${tmpdir}/tiles5_NE..tmp.png -resize $option_resize_1 ./tiles5_NE.png
+magick ${tmpdir}/tiles5_NE..tmp.png -resize $option_resize_1 ./samples/tiles5_NE.png
 
 python3 ./create_tiles.py \
   --input \
@@ -159,7 +159,7 @@ python3 ./create_tiles.py \
   --gap_color $option_gap_color \
   --direction SE
 
-magick ${tmpdir}/tiles5_SE..tmp.png -resize $option_resize_1 ./tiles5_SE.png
+magick ${tmpdir}/tiles5_SE..tmp.png -resize $option_resize_1 ./samples/tiles5_SE.png
 
 python3 ./create_tiles.py \
   --input \
@@ -174,7 +174,7 @@ python3 ./create_tiles.py \
   --gap_color $option_gap_color \
   --direction SW
 
-magick ${tmpdir}/tiles5_SW..tmp.png -resize $option_resize_1 ./tiles5_SW.png
+magick ${tmpdir}/tiles5_SW..tmp.png -resize $option_resize_1 ./samples/tiles5_SW.png
 
 
 #
@@ -204,7 +204,7 @@ python3 ./create_tiles.py \
   --gap_color $option_gap_color \
   --direction NW
 
-magick ${tmpdir}/tiles6_NW..tmp.png -resize $option_resize_1 ./tiles6_NW.png
+magick ${tmpdir}/tiles6_NW..tmp.png -resize $option_resize_1 ./samples/tiles6_NW.png
 
 python3 ./create_tiles.py \
   --input \
@@ -220,7 +220,7 @@ python3 ./create_tiles.py \
   --gap_color $option_gap_color \
   --direction NE
 
-magick ${tmpdir}/tiles6_NE..tmp.png -resize $option_resize_1 ./tiles6_NE.png
+magick ${tmpdir}/tiles6_NE..tmp.png -resize $option_resize_1 ./samples/tiles6_NE.png
 
 python3 ./create_tiles.py \
   --input \
@@ -236,7 +236,7 @@ python3 ./create_tiles.py \
   --gap_color $option_gap_color \
   --direction SE
 
-magick ${tmpdir}/tiles6_SE..tmp.png -resize $option_resize_1 ./tiles6_SE.png
+magick ${tmpdir}/tiles6_SE..tmp.png -resize $option_resize_1 ./samples/tiles6_SE.png
 
 python3 ./create_tiles.py \
   --input \
@@ -252,7 +252,7 @@ python3 ./create_tiles.py \
   --gap_color $option_gap_color \
   --direction SW
 
-magick ${tmpdir}/tiles6_SW..tmp.png -resize $option_resize_1 ./tiles6_SW.png
+magick ${tmpdir}/tiles6_SW..tmp.png -resize $option_resize_1 ./samples/tiles6_SW.png
 
 
 ##
