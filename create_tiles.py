@@ -50,22 +50,22 @@ if __name__ == "__main__":
     type = str,
     help = message_yellow('Output image file'))
 
-  parser.add_argument('-tt', '--tyling_type',
+  parser.add_argument('-t', '--tyling_type',
     choices = [ 'landscape', 'portrait', '4tiles', '5tiles', '6tiles', ],
     required = True,
     help = message_yellow('Tyling type'))
 
-  parser.add_argument('-gs', '--gap_size',
+  parser.add_argument('-s', '--gap_size',
     default = 10,
     type = int,
     help = message_yellow('Spacing between images'))
 
-  parser.add_argument('-gc', '--gap_color',
+  parser.add_argument('-c', '--gap_color',
     default = '#00000000',
     type = str,
     help = message_yellow('Color between images'))
 
-  parser.add_argument('-di', '--direction',
+  parser.add_argument('-d', '--direction',
     default = 'NW',
     choices = [ 'NW', 'NE', 'SE', 'SW', ],
     type = str,
