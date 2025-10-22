@@ -38,10 +38,9 @@ magick -size 640x360 xc:'#808080' -fill '#000000' -gravity Center -pointsize 256
 #
 
 python3 ./create_tiles.py \
-  --input \
-    ${tmpdir}/sample1.png \
-    ${tmpdir}/sample2w.png \
-    ${tmpdir}/sample3.png \
+  --input ${tmpdir}/sample1.png \
+  --input ${tmpdir}/sample2w.png \
+  --input ${tmpdir}/sample3.png \
   --output ${tmpdir}/tiles_landscape..tmp.png \
   --tyling_type landscape \
   --gap_size $option_gap_size \
@@ -65,10 +64,9 @@ magick ${tmpdir}/tiles_landscape..tmp.png -resize $option_resize_2 ./samples/til
 #
 
 python3 ./create_tiles.py \
-  --input \
-    ${tmpdir}/sample1.png \
-    ${tmpdir}/sample2h.png \
-    ${tmpdir}/sample3.png \
+  --input ${tmpdir}/sample1.png \
+  --input ${tmpdir}/sample2h.png \
+  --input ${tmpdir}/sample3.png \
   --output ${tmpdir}/tiles_portrait..tmp.png \
   --tyling_type portrait \
   --gap_size $option_gap_size \
@@ -88,11 +86,10 @@ magick ${tmpdir}/tiles_portrait..tmp.png -resize $option_resize_3 ./samples/tile
 #
 
 python3 ./create_tiles.py \
-  --input \
-    ${tmpdir}/sample1.png \
-    ${tmpdir}/sample2.png \
-    ${tmpdir}/sample3.png \
-    ${tmpdir}/sample4.png \
+  --input ${tmpdir}/sample1.png \
+  --input ${tmpdir}/sample2.png \
+  --input ${tmpdir}/sample3.png \
+  --input ${tmpdir}/sample4.png \
   --output ${tmpdir}/tiles4..tmp.png \
   --tyling_type 4tiles \
   --gap_size $option_gap_size \
@@ -117,12 +114,11 @@ magick ${tmpdir}/tiles4..tmp.png -resize $option_resize_1 ./samples/tiles4.png
 #
 
 python3 ./create_tiles.py \
-  --input \
-    ${tmpdir}/sample1.png \
-    ${tmpdir}/sample2.png \
-    ${tmpdir}/sample3.png \
-    ${tmpdir}/sample4.png \
-    ${tmpdir}/sample5.png \
+  --input ${tmpdir}/sample1.png \
+  --input ${tmpdir}/sample2.png \
+  --input ${tmpdir}/sample3.png \
+  --input ${tmpdir}/sample4.png \
+  --input ${tmpdir}/sample5.png \
   --output ${tmpdir}/tiles5_NW..tmp.png \
   --tyling_type 5tiles \
   --gap_size $option_gap_size \
@@ -132,12 +128,11 @@ python3 ./create_tiles.py \
 magick ${tmpdir}/tiles5_NW..tmp.png -resize $option_resize_1 ./samples/tiles5_NW.png
 
 python3 ./create_tiles.py \
-  --input \
-    ${tmpdir}/sample1.png \
-    ${tmpdir}/sample2.png \
-    ${tmpdir}/sample3.png \
-    ${tmpdir}/sample4.png \
-    ${tmpdir}/sample5.png \
+  --input ${tmpdir}/sample1.png \
+  --input ${tmpdir}/sample2.png \
+  --input ${tmpdir}/sample3.png \
+  --input ${tmpdir}/sample4.png \
+  --input ${tmpdir}/sample5.png \
   --output ${tmpdir}/tiles5_NE..tmp.png \
   --tyling_type 5tiles \
   --gap_size $option_gap_size \
@@ -147,12 +142,11 @@ python3 ./create_tiles.py \
 magick ${tmpdir}/tiles5_NE..tmp.png -resize $option_resize_1 ./samples/tiles5_NE.png
 
 python3 ./create_tiles.py \
-  --input \
-    ${tmpdir}/sample1.png \
-    ${tmpdir}/sample2.png \
-    ${tmpdir}/sample3.png \
-    ${tmpdir}/sample4.png \
-    ${tmpdir}/sample5.png \
+  --input ${tmpdir}/sample1.png \
+  --input ${tmpdir}/sample2.png \
+  --input ${tmpdir}/sample3.png \
+  --input ${tmpdir}/sample4.png \
+  --input ${tmpdir}/sample5.png \
   --output ${tmpdir}/tiles5_SE..tmp.png \
   --tyling_type 5tiles \
   --gap_size $option_gap_size \
@@ -162,12 +156,11 @@ python3 ./create_tiles.py \
 magick ${tmpdir}/tiles5_SE..tmp.png -resize $option_resize_1 ./samples/tiles5_SE.png
 
 python3 ./create_tiles.py \
-  --input \
-    ${tmpdir}/sample1.png \
-    ${tmpdir}/sample2.png \
-    ${tmpdir}/sample3.png \
-    ${tmpdir}/sample4.png \
-    ${tmpdir}/sample5.png \
+  --input ${tmpdir}/sample1.png \
+  --input ${tmpdir}/sample2.png \
+  --input ${tmpdir}/sample3.png \
+  --input ${tmpdir}/sample4.png \
+  --input ${tmpdir}/sample5.png \
   --output ${tmpdir}/tiles5_SW..tmp.png \
   --tyling_type 5tiles \
   --gap_size $option_gap_size \
@@ -191,13 +184,12 @@ magick ${tmpdir}/tiles5_SW..tmp.png -resize $option_resize_1 ./samples/tiles5_SW
 #
 
 python3 ./create_tiles.py \
-  --input \
-    ${tmpdir}/sample1.png \
-    ${tmpdir}/sample2.png \
-    ${tmpdir}/sample3.png \
-    ${tmpdir}/sample4.png \
-    ${tmpdir}/sample5.png \
-    ${tmpdir}/sample6.png \
+  --input ${tmpdir}/sample1.png \
+  --input ${tmpdir}/sample2.png \
+  --input ${tmpdir}/sample3.png \
+  --input ${tmpdir}/sample4.png \
+  --input ${tmpdir}/sample5.png \
+  --input ${tmpdir}/sample6.png \
   --output ${tmpdir}/tiles6_NW..tmp.png \
   --tyling_type 6tiles \
   --gap_size $option_gap_size \
@@ -207,13 +199,12 @@ python3 ./create_tiles.py \
 magick ${tmpdir}/tiles6_NW..tmp.png -resize $option_resize_1 ./samples/tiles6_NW.png
 
 python3 ./create_tiles.py \
-  --input \
-    ${tmpdir}/sample1.png \
-    ${tmpdir}/sample2.png \
-    ${tmpdir}/sample3.png \
-    ${tmpdir}/sample4.png \
-    ${tmpdir}/sample5.png \
-    ${tmpdir}/sample6.png \
+  --input ${tmpdir}/sample1.png \
+  --input ${tmpdir}/sample2.png \
+  --input ${tmpdir}/sample3.png \
+  --input ${tmpdir}/sample4.png \
+  --input ${tmpdir}/sample5.png \
+  --input ${tmpdir}/sample6.png \
   --output ${tmpdir}/tiles6_NE..tmp.png \
   --tyling_type 6tiles \
   --gap_size $option_gap_size \
@@ -223,13 +214,12 @@ python3 ./create_tiles.py \
 magick ${tmpdir}/tiles6_NE..tmp.png -resize $option_resize_1 ./samples/tiles6_NE.png
 
 python3 ./create_tiles.py \
-  --input \
-    ${tmpdir}/sample1.png \
-    ${tmpdir}/sample2.png \
-    ${tmpdir}/sample3.png \
-    ${tmpdir}/sample4.png \
-    ${tmpdir}/sample5.png \
-    ${tmpdir}/sample6.png \
+  --input ${tmpdir}/sample1.png \
+  --input ${tmpdir}/sample2.png \
+  --input ${tmpdir}/sample3.png \
+  --input ${tmpdir}/sample4.png \
+  --input ${tmpdir}/sample5.png \
+  --input ${tmpdir}/sample6.png \
   --output ${tmpdir}/tiles6_SE..tmp.png \
   --tyling_type 6tiles \
   --gap_size $option_gap_size \
@@ -239,13 +229,12 @@ python3 ./create_tiles.py \
 magick ${tmpdir}/tiles6_SE..tmp.png -resize $option_resize_1 ./samples/tiles6_SE.png
 
 python3 ./create_tiles.py \
-  --input \
-    ${tmpdir}/sample1.png \
-    ${tmpdir}/sample2.png \
-    ${tmpdir}/sample3.png \
-    ${tmpdir}/sample4.png \
-    ${tmpdir}/sample5.png \
-    ${tmpdir}/sample6.png \
+  --input ${tmpdir}/sample1.png \
+  --input ${tmpdir}/sample2.png \
+  --input ${tmpdir}/sample3.png \
+  --input ${tmpdir}/sample4.png \
+  --input ${tmpdir}/sample5.png \
+  --input ${tmpdir}/sample6.png \
   --output ${tmpdir}/tiles6_SW..tmp.png \
   --tyling_type 6tiles \
   --gap_size $option_gap_size \

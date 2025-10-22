@@ -19,6 +19,7 @@ from _functions.common_function import (
   subprocess_error_message,
   message_yellow,
   message_red,
+  check_file_existence,
 )
 
 from _functions.tiles4 import create_tiles4
@@ -38,11 +39,10 @@ if __name__ == "__main__":
     description = message_yellow('Arrange image files in tiles.'))
 
   parser.add_argument('-i', '--input',
-    nargs = '+',
-    metavar = 'Input files, 2 to 6',
+    action = 'append',
     required = True,
-    type = str,
-    help = message_yellow('Input image files'))
+    type = check_file_existence,
+    help = message_yellow('Input image files, min is 2 files'))
 
   parser.add_argument('-o', '--output',
     metavar = 'Output file',
@@ -160,7 +160,7 @@ if __name__ == "__main__":
   elif 'landscape' == args.tyling_type or 'portrait' == args.tyling_type:
     create_landscape_or_portrait(args, temp_dir, dic_size)
 
-  print(message_yellow(os.path.basename(args.output)))
+  print(message_yellow('Output: ' + os.path.basename(args.output)))
 
 
   #
